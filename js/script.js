@@ -58,6 +58,7 @@ document.ready(
             document.getElementsByClassName('toggleBtn')[0].addEventListener('click', () => {
                 if (document.getElementsByTagName('body')[0].classList.contains('dark-theme')) {
                     document.getElementsByTagName('body')[0].classList.remove('dark-theme');
+                    document.getElementsByTagName('body')[0].style = null;
                 } else {
                     document.getElementsByTagName('body')[0].classList.add('dark-theme');
                 }

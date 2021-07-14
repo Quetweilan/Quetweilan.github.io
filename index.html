@@ -45,6 +45,13 @@
 
 <meta name="generator" content="Hexo 5.4.0"></head>
 <body>
+    <script>
+        const currentTheme = window.localStorage && window.localStorage.getItem('theme');
+        if ('dark' === currentTheme) {
+            document.getElementsByTagName('body')[0].style.backgroundColor = '#292a2d';
+            document.getElementsByTagName('body')[0].style.color = '#a9a9b3';
+        }
+    </script>
     <div class="wrapper">
         <header>
     <nav class="navbar">

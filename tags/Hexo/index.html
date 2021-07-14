@@ -12,7 +12,7 @@
 
 
 
-<title>Category: Hexotest | 微澜‘s blog</title>
+<title>Tag: Hexo | 微澜‘s blog</title>
 
 
 
@@ -45,6 +45,13 @@
 
 <meta name="generator" content="Hexo 5.4.0"></head>
 <body>
+    <script>
+        const currentTheme = window.localStorage && window.localStorage.getItem('theme');
+        if ('dark' === currentTheme) {
+            document.getElementsByTagName('body')[0].style.backgroundColor = '#292a2d';
+            document.getElementsByTagName('body')[0].style.color = '#a9a9b3';
+        }
+    </script>
     <div class="wrapper">
         <header>
     <nav class="navbar">
@@ -102,11 +109,10 @@
         <div class="main">
             
 
-
     
 <div class="container">
-    <div class="post-wrap categories">
-        <h2 class="post-title">-&nbsp;Categories&nbsp;·&nbsp;Hexotest-</h2>
+    <div class="post-wrap tags">
+        <h2 class="post-title">-&nbsp;Tag&nbsp;·&nbsp;Hexo-</h2>
     </div>
     <div class="post-wrap archive">
     

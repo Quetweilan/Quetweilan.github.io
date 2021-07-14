@@ -45,6 +45,13 @@
 
 <meta name="generator" content="Hexo 5.4.0"></head>
 <body>
+    <script>
+        const currentTheme = window.localStorage && window.localStorage.getItem('theme');
+        if ('dark' === currentTheme) {
+            document.getElementsByTagName('body')[0].style.backgroundColor = '#292a2d';
+            document.getElementsByTagName('body')[0].style.color = '#a9a9b3';
+        }
+    </script>
     <div class="wrapper">
         <header>
     <nav class="navbar">
@@ -185,7 +192,7 @@
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/Hexotest/">Hexotest</a>
+                                <a href="/categories/Hexo%E7%AC%94%E8%AE%B0/">Hexo笔记</a>
                             
                         </span>
                     
@@ -194,7 +201,7 @@
         </header>
 
         <div class="post-content">
-            <h1 id="测试引用块-quote"><a href="#测试引用块-quote" class="headerlink" title="测试引用块 quote"></a>测试引用块 quote</h1><h2 id="不加参数"><a href="#不加参数" class="headerlink" title="不加参数"></a>不加参数</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% blockquote [author[, source]] [link] [source_link_title] %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
+            <h1 id="引用块-quote"><a href="#引用块-quote" class="headerlink" title="引用块 quote"></a>引用块 quote</h1><h2 id="不加参数"><a href="#不加参数" class="headerlink" title="不加参数"></a>不加参数</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% blockquote [author[, source]] [link] [source_link_title] %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
 <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</p>
 </blockquote>
 
@@ -229,7 +236,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/Test/"># Test</a>
+                        <a href="/tags/Hexo/"># Hexo</a>
                     
                         
                 </span>
