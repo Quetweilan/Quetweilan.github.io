@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'iconfont';
-  src: url('iconfont.ttf?t=1626088273162') format('truetype');
+  font-family: "iconfont"; /* Project id  */
+  src: url('iconfont.ttf?t=1626411776082') format('truetype');
 }
 
 .iconfont {
@@ -10,7 +10,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 
 .icon-telegram:before {
   content: "\e8db";
