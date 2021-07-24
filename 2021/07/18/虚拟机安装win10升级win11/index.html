@@ -218,12 +218,12 @@
 <p>最终在<a target="_blank" rel="noopener" href="https://msdn.itellyou.cn/">MSDN</a>下载1909版本并通过简易安装成功。<br>在系统设置内更新系统。</p>
 <h1 id="安装win11"><a href="#安装win11" class="headerlink" title="安装win11"></a>安装win11</h1><p>在 设置-更新 中加入Windows预览体验计划，并且一定是Dev通道，随后检查更新即可。</p>
 <p>以下是一些出现的问题及处理。</p>
-<h3 id="预览体验计划空白"><a href="#预览体验计划空白" class="headerlink" title="预览体验计划空白"></a>预览体验计划空白</h3><p>在设置-查找设置 搜索 诊断和反馈设置<br>将必须诊断的数据改为可选<br>将改进墨迹书写和键入选项打开<br>将查看诊断数据打开</p>
-<h3 id="1-没有Dev通道，只有Release-Preview"><a href="#1-没有Dev通道，只有Release-Preview" class="headerlink" title="1. 没有Dev通道，只有Release Preview"></a>1. 没有Dev通道，只有Release Preview</h3><p>先选择，然后win+r，输入regedit 打开注册表<br>在下述路径，找到UIBranch，右键修改值为Dev。随即更新。</p>
+<h3 id="1-预览体验计划空白"><a href="#1-预览体验计划空白" class="headerlink" title="1. 预览体验计划空白"></a>1. 预览体验计划空白</h3><p>在设置-查找设置 搜索 诊断和反馈设置<br>将必须诊断的数据改为可选<br>将改进墨迹书写和键入选项打开<br>将查看诊断数据打开</p>
+<h3 id="2-没有Dev通道，只有Release-Preview"><a href="#2-没有Dev通道，只有Release-Preview" class="headerlink" title="2. 没有Dev通道，只有Release Preview"></a>2. 没有Dev通道，只有Release Preview</h3><p>先选择，然后win+r，输入regedit 打开注册表<br>在下述路径，找到UIBranch，右键修改值为Dev。随即更新。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindosSelfHost\Ul\Selection</span><br></pre></td></tr></table></figure>
 
-<h3 id="2-没有打开uefi启动"><a href="#2-没有打开uefi启动" class="headerlink" title="2. 没有打开uefi启动"></a>2. 没有打开uefi启动</h3><p>这需要进入主板修改，vm在虚拟机设置-高级里可以修改。</p>
-<h3 id="3-出现TPM错误"><a href="#3-出现TPM错误" class="headerlink" title="3. 出现TPM错误"></a>3. 出现TPM错误</h3><p>进入c盘根目录，显示隐藏文件，可以看到 windows-bt 文件夹。<br>进入该文件夹，进入source文件夹，将文件AppraiserRes.dll删除。</p>
+<h3 id="3-没有打开uefi启动"><a href="#3-没有打开uefi启动" class="headerlink" title="3. 没有打开uefi启动"></a>3. 没有打开uefi启动</h3><p>这需要进入主板修改，vm在虚拟机设置-高级里可以修改。</p>
+<h3 id="4-出现TPM错误"><a href="#4-出现TPM错误" class="headerlink" title="4. 出现TPM错误"></a>4. 出现TPM错误</h3><p>进入c盘根目录，显示隐藏文件，可以看到 windows-bt 文件夹。<br>进入该文件夹，进入source文件夹，将文件AppraiserRes.dll删除。</p>
 
         </div>
 
