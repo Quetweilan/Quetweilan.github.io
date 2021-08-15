@@ -12,7 +12,7 @@
 
 
 
-<title>删除顽固文件 | 微澜‘s blog</title>
+<title>Wallpaper_Engine | 微澜‘s blog</title>
 
 
 
@@ -114,11 +114,73 @@
             <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">删除顽固文件</h1>
+            <h1 class="post-title">Wallpaper_Engine</h1>
             
                 <div class="post-meta">
                     
@@ -127,14 +189,14 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">August 14, 2021&nbsp;&nbsp;0:34:26</a>
+                        Date: <a href="#">August 15, 2021&nbsp;&nbsp;20:22:49</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/Windows%E5%B0%8F%E6%8A%80%E5%B7%A7/">Windows小技巧</a>
+                                <a href="/categories/%E6%8E%A8%E8%8D%90/">推荐</a>
                             
                         </span>
                     
@@ -143,14 +205,13 @@
         </header>
 
         <div class="post-content">
-            <p>现在应该很多软件都提供了这种功能<br>比如火绒安全里解除文件占用、文件粉碎</p>
-<p>这里提供一种不需要额外软件的方法，但我本人未验证，验证后根据情况是否保留。</p>
-<p>新建文本文档，拷贝以下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DEL /F /A /Q \\?\%1</span><br><span class="line">RD /S /Q \\?\%1</span><br></pre></td></tr></table></figure>
-
-<p>保存，修改文件后缀为bat。</p>
-<p>把文件拖到bat文件上即可删除。</p>
-
+            <h3 id="1-Minimal-Life-amp-Death"><a href="#1-Minimal-Life-amp-Death" class="headerlink" title="1. Minimal Life&amp;Death"></a>1. <a target="_blank" rel="noopener" href="https://steamcommunity.com/sharedfiles/filedetails/?id=1733422062">Minimal Life&amp;Death</a></h3><p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/Minimal%20Life&Death.png"></p>
+<h3 id="2-WLOP-Nap"><a href="#2-WLOP-Nap" class="headerlink" title="2. WLOP - Nap"></a>2. <a target="_blank" rel="noopener" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2269193950">WLOP - Nap</a></h3><p><img src="https://i.imgur.com/IMkpN1c.jpg"></p>
+<h3 id="3-Blender-Waves"><a href="#3-Blender-Waves" class="headerlink" title="3. Blender Waves"></a>3. <a target="_blank" rel="noopener" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2520175136">Blender Waves</a></h3><p><img src="https://i.imgur.com/7YO8odJ.jpg"></p>
+<h3 id="4-Reimu-with-music-灵梦音乐版-1080-60FPS"><a href="#4-Reimu-with-music-灵梦音乐版-1080-60FPS" class="headerlink" title="4. Reimu with music 灵梦音乐版 1080 60FPS"></a>4. <a target="_blank" rel="noopener" href="https://steamcommunity.com/sharedfiles/filedetails/?id=824586497">Reimu with music 灵梦音乐版 1080 60FPS</a></h3><p><img src="https://i.imgur.com/DiJHsZr.jpg"></p>
+<h3 id="5-飘雪精灵-囚禁"><a href="#5-飘雪精灵-囚禁" class="headerlink" title="5. 飘雪精灵_囚禁"></a>5. <a target="_blank" rel="noopener" href="https://steamcommunity.com/sharedfiles/filedetails/?id=1157524891">飘雪精灵_囚禁</a></h3><p><img src="https://i.imgur.com/OJKKrzV.jpg"></p>
+<h3 id="6-star-wars"><a href="#6-star-wars" class="headerlink" title="6. star wars"></a>6. <a target="_blank" rel="noopener" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2269573812">star wars</a></h3><p><img src="https://i.imgur.com/cTe1N58.jpg"></p>
+<h3 id="7"><a href="#7" class="headerlink" title="7. "></a>7. <a href=""></a></h3>
         </div>
 
         
@@ -173,9 +234,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/"># 小技巧</a>
-                    
-                        <a href="/tags/Windows/"># Windows</a>
+                        <a href="/tags/%E5%A3%81%E7%BA%B8/"># 壁纸</a>
                     
                         
                 </span>
@@ -188,10 +247,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2021/08/15/Wallpaper-Engine/">Wallpaper_Engine</a>
             
-            
-            <a class="next" rel="next" href="/2021/08/13/%E5%85%B3%E4%BA%8E%E6%96%87%E5%AD%97%E7%BE%8E%E6%84%9F%E8%BF%99%E4%BB%B6%E4%BA%8B/">关于文字美感这件事</a>
+            <a class="next" rel="next" href="/2021/08/14/%E5%88%A0%E9%99%A4%E9%A1%BD%E5%9B%BA%E6%96%87%E4%BB%B6/">删除顽固文件</a>
             
         </section>
 
