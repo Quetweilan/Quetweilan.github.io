@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Quet Weilan">
+
+
+
+
+
+<title>windows软件 | 微澜‘s blog</title>
+
+
+
+    <link rel="icon" href="/rabbit.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+    <script>
+        const currentTheme = window.localStorage && window.localStorage.getItem('theme');
+        if ('dark' === currentTheme) {
+            document.getElementsByTagName('body')[0].style.backgroundColor = '#292a2d';
+            document.getElementsByTagName('body')[0].style.color = '#a9a9b3';
+        }
+    </script>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">微澜&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">微澜&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">windows软件</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Quet Weilan</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">August 16, 2021&nbsp;&nbsp;17:41:45</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Windows%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/">Windows软件推荐</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <blockquote>
+<p>一些好用的Windows软件</p>
+</blockquote>
+<h2 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h2><table>
+<thead>
+<tr>
+<th align="center">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.google.com/intl/zh-HK/chrome/">chrome</a></td>
+<td align="left">浏览器占用第一，比起edge我更喜欢chrome，可能和Google生态好占优势。无法访问Google的还是用edge把。</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.torproject.org/download/">Tor Browser</a></td>
+<td align="left">暗网浏览器，YouTube有教程</td>
+</tr>
+</tbody></table>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><table>
+<thead>
+<tr>
+<th align="center">Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">idm</td>
+<td>不能下载磁力，52破解下载破解版</td>
+</tr>
+<tr>
+<td align="center">Thunder</td>
+<td>绿软家园下载的，下载速度还行</td>
+</tr>
+<tr>
+<td align="center">4kVideoDownloader</td>
+<td>视频下载，主要用来批量下载</td>
+</tr>
+<tr>
+<td align="center">B站下载工具</td>
+<td>视频下载，主要用来批量下载</td>
+</tr>
+<tr>
+<td align="center">crtubeget_youtube_video_download</td>
+<td>视频下载，主要用来批量下载</td>
+</tr>
+</tbody></table>
+<h2 id="安全清理"><a href="#安全清理" class="headerlink" title="安全清理"></a>安全清理</h2><table>
+<thead>
+<tr>
+<th align="center">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.huorong.cn/">火绒</a></td>
+<td align="left">安全工具，有清理功能</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.chuyu.me/zh-Hant/">Dism++</a></td>
+<td align="left">C盘清理</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://geekuninstaller.com/">geek</a></td>
+<td align="left">软件卸载</td>
+</tr>
+<tr>
+<td align="center">Privacy Eraser</td>
+<td align="left">隐私清理</td>
+</tr>
+</tbody></table>
+<h2 id="快速启动"><a href="#快速启动" class="headerlink" title="快速启动"></a>快速启动</h2><table>
+<thead>
+<tr>
+<th align="center">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/25H/Maya">maya</a></td>
+<td align="left">文件夹、软件快捷方式集合</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.voidtools.com/zh-cn/downloads/">everything</a></td>
+<td align="left">文件、软件快速搜索</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://u.tools/">utools</a></td>
+<td align="left">文件搜索、软件快速启动、插件</td>
+</tr>
+</tbody></table>
+<h2 id="文本编辑"><a href="#文本编辑" class="headerlink" title="文本编辑"></a>文本编辑</h2><table>
+<thead>
+<tr>
+<th align="center">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://notepad-plus-plus.org/downloads/">notepad++</a></td>
+<td align="left">可录制宏，代替重复操作</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://code.visualstudio.com/">VS code</a></td>
+<td align="left">专业代码编辑</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://typora.io/">Typora</a></td>
+<td align="left">Markdown编辑器，简约美观</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.notion.so/desktop">notion</a></td>
+<td align="left">笔记软件，多端同步</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://obsidian.md/">obsidian</a></td>
+<td align="left">笔记软件，知识成体系</td>
+</tr>
+</tbody></table>
+<h2 id="文件阅读器"><a href="#文件阅读器" class="headerlink" title="文件阅读器"></a>文件阅读器</h2><table>
+<thead>
+<tr>
+<th align="center">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://cajviewer.cnki.net/download.html">CAJviewer</a></td>
+<td align="left">caj文档阅读器</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://tw.bandisoft.com/honeyview/">honeyview</a></td>
+<td align="left">图片阅读器</td>
+</tr>
+<tr>
+<td align="center">ZhiyunTranslator</td>
+<td align="left">英文文档阅读器，同步翻译</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.foxit.com/pdf-reader/">FoxitReader</a></td>
+<td align="left">pdf阅读器</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://potplayer.daum.net/">potplay</a></td>
+<td align="left">视频播放器</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://getmusicbee.com/downloads/">musicbee</a></td>
+<td align="left">音乐播放器</td>
+</tr>
+</tbody></table>
+<h2 id="小工具"><a href="#小工具" class="headerlink" title="小工具"></a>小工具</h2><table>
+<thead>
+<tr>
+<th align="center">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/zhongyang219/TrafficMonitor/releases">TrafficMonitor</a></td>
+<td align="left">状态栏显示网速、cpu、内存</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://zh.snipaste.com/download.html">Snipaste</a></td>
+<td align="left">截图工具，固定在屏幕</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/microsoft/PowerToys/releases">powertoys</a></td>
+<td align="left">改键、窗口分布</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.tcbmi.com/strokeit/downloads.shtml">strokelt</a></td>
+<td align="left">全局鼠标手势</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.yingdev.com/projects/tickeys">TicKeys</a></td>
+<td align="left">按键声音</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.codesector.com/downloads">TeraCopy</a></td>
+<td align="left">文件拷贝</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.jam-software.com/treesize_free">TreeSizeFree</a></td>
+<td align="left">快速查看文件夹大小</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="http://mk.qicaise.com/">按键助手</a></td>
+<td align="left">代替重复操作</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/hxz393/BaiduPanFilesTransfers/releases">百度转存</a></td>
+<td align="left">批量转存</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/docblue/chfsgui/releases">chfsgui</a></td>
+<td align="left">局域网文件分享</td>
+</tr>
+<tr>
+<td align="center">pcstory</td>
+<td align="left">游戏下载</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo/releases">picgo</a></td>
+<td align="left">图床上传</td>
+</tr>
+</tbody></table>
+<h2 id="实用工具"><a href="#实用工具" class="headerlink" title="实用工具"></a>实用工具</h2><table>
+<thead>
+<tr>
+<th align="center">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Bandizip</td>
+<td align="left">解压缩文件，52破解版</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/TDesktop-x64/tdesktop/releases">64Gram</a></td>
+<td align="left">第三方Telegram，优化原版，多账号登录</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/Fndroid/clash_for_windows_pkg/releases">clash</a></td>
+<td align="left">代理软件</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://quetweilan.github.io/2021/07/24/keepass%E5%8F%8C%E7%AB%AF%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/">keepass</a></td>
+<td align="left">密码管理软件</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://obsproject.com/download">obs</a></td>
+<td align="left">录屏软件</td>
+</tr>
+<tr>
+<td align="center">Protected Folder</td>
+<td align="left">加密文件夹</td>
+</tr>
+<tr>
+<td align="center">Wise Folder Hider</td>
+<td align="left">加密文件夹</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://start.qq.com/">startqq</a></td>
+<td align="left">腾讯云游戏</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://sunlogin.oray.com/download/">向日葵</a></td>
+<td align="left">远程控制</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.todesk.com/download.html">todesk</a></td>
+<td align="left">远程控制</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.deepl.com/translator">deepl</a></td>
+<td align="left">翻译软件</td>
+</tr>
+</tbody></table>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+                     <p class="copyright-item">
+
+                         <span>I feel honored if I helped you! If your problem is not solved, please move to <strong>GOOGLE</strong> !</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E6%8E%A8%E8%8D%90/"># 推荐</a>
+                    
+                        <a href="/tags/Windows%E8%BD%AF%E4%BB%B6/"># Windows软件</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2021/08/15/Wallpaper-Engine/">Wallpaper_Engine</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Quet Weilan | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
