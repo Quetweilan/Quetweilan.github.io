@@ -212,7 +212,16 @@
 <h2 id="CE"><a href="#CE" class="headerlink" title="CE"></a>CE</h2><p>最优密度g* 为：<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011211792.png">。此时仅需一个样本即可获得0方差值。<br>但由于l 未知，则g* 未知。选择合适参数v 使g∗和f(·;v) 之间距离最小。<br>通常使用<strong>KL距离</strong>：<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011335853.png"><br>代入g* 和 f 发现，减号前面一部分与未知数 v 无关，可当作常数，减号后面则是 <strong>交叉熵</strong>。因此求最小KL距离转换为求最大交叉熵，即：<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011338140.png"><br>将上式中g* 表达式代入得<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011450568.png"><br>即：<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011451986.png"></p>
 <h2 id="CEIS"><a href="#CEIS" class="headerlink" title="CEIS"></a>CEIS</h2><p>再次使用重要抽样，改变 f(·;w)，原式可化为<br><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011513388.png"><br>其中：<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011518741.png"></p>
 <p>通过求解随机程序：<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011521024.png"><br>D 凸且可微。因此上式的解可由下面<strong>方程组解得</strong>：<br><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011531383.png"><br>可得上式v 最优解为：<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011518855.png"><br>此处样本X1,…,XN来自 f(·;w)。<br><strong>利用方程求解的优点</strong>是解通常可以解析计算。特别是，如果随机变量的分布属于自然指数族(NEF)，就会发生这种情况。</p>
-<p>求解随机程序目标事件概率不能太小，对于罕见事件难以求解。这是因为对于罕见事件，大部分指标函数 I 的分量值为0.</p>
+<p>求解随机程序目标事件概率不能太小，对于罕见事件难以求解。这是因为对于罕见事件，大部分指标函数 I 的分量值为0。一个<strong>多层次的算法</strong>可以用来克服这个困难。其思想是构造参考参数序列{vt, t≥0}和水平序列{γt, t≥1}，并在γt和vt中进行迭代(见下面算法3.1)。<br><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011611293.png"></p>
+<h3 id="Adaptive-updating-of-γt"><a href="#Adaptive-updating-of-γt" class="headerlink" title="Adaptive updating of γt."></a>Adaptive updating of γt.</h3><p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011759116.png"></p>
+<h3 id="Adaptive-updating-of-vt"><a href="#Adaptive-updating-of-vt" class="headerlink" title="Adaptive updating of vt"></a>Adaptive updating of vt</h3><p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011911618.png"></p>
+<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011912278.png"></p>
+<p><strong>3.1算法的确定性版本。</strong><br><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011932612.png"><br><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011932246.png"></p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>对于实例2.1的补充：<br><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011931564.png"></p>
+<h3 id="注"><a href="#注" class="headerlink" title="注"></a>注</h3><p><strong>注1 静态模拟（Static Simulation）</strong><br>上述方法仅适用于有限维随机向量;这有时被称为静态模拟。对于无限维随机向量或随机过程，我们需要更微妙的处理。<br>算法3.1在没有太多变化的情况下是正确的，可以很容易地应用于涉及轻尾和重尾分布的估计问题。</p>
+<p><strong>注2 方差减小（Variance Minimization）</strong><br>通过寻找最优不可用度v* 来获得最小方差：<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011936050.png"><br>再次使用重要抽样：<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011938118.png"></p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011939804.png"></p>
+<h1 id="组合优化的CE方法"><a href="#组合优化的CE方法" class="headerlink" title="组合优化的CE方法"></a>组合优化的CE方法</h1><p>待补充…</p>
 
         </div>
 
