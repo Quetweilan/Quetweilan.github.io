@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Quet Weilan">
+
+
+
+
+
+<title>CE:Introduction | 微澜‘s blog</title>
+
+
+
+    <link rel="icon" href="/rabbit.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+    <script>
+        const currentTheme = window.localStorage && window.localStorage.getItem('theme');
+        if ('dark' === currentTheme) {
+            document.getElementsByTagName('body')[0].style.backgroundColor = '#292a2d';
+            document.getElementsByTagName('body')[0].style.color = '#a9a9b3';
+        }
+    </script>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">微澜&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">微澜&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">CE:Introduction</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Quet Weilan</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">October 1, 2021&nbsp;&nbsp;15:57:10</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/CE%E7%AC%94%E8%AE%B0/">CE笔记</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="摘要："><a href="#摘要：" class="headerlink" title="摘要："></a>摘要：</h1><p>交叉熵方法是一种新的多极值组合优化和罕见事件模拟的通用方法。本教程的目的是简单介绍CE方法。我们介绍了CE方法，基本算法及其修改，并讨论了在组合优化和机器学习中的应用。</p>
+<h1 id="引言："><a href="#引言：" class="headerlink" title="引言："></a>引言：</h1><h3 id="组合优化-combinatorial-optimization-problems"><a href="#组合优化-combinatorial-optimization-problems" class="headerlink" title="组合优化(combinatorial optimization problems)"></a>组合优化(combinatorial optimization problems)</h3><p>旅行商问题(travelling salesman problem，TSP)、二次分配问题(quadratic assignment problem，QAP)和最大截问题(max-cut)是一类具有代表性的<strong>组合优化问题</strong>(combinatorial optimization problems，COP)，所研究的问题是完全已知的静态问题。缓冲区分配问题(buffer allocation problem，BAP)是一个噪声估计问题，由于目标函数是未知的，因此需要估计目标函数。离散事件模拟是估计未知目标函数的一种方法。</p>
+<p>许多cop可以表示为关于<strong>加权图的优化</strong>问题。在(a)节点或(b)图的边中引入随机性。前者称为随机节点网络(stochastic node networks，SNN)，后者称为随机边缘网络(stochastic edge networks，SEN)。SNN问题的例子有最大割(max-cut)问题，缓冲区分配问题和聚类问题(clustering problems)。SEN问题的例子有旅行商问题、二次分配问题、团问题(clique problem)和马尔可夫决策问题中的最优策略搜索(optimal policy search in Markovian decision problems，MDPs)。</p>
+<p>其他著名的<strong>随机组合优化方法</strong>有模拟退火(simulated annealing)、禁忌搜索(tabu search)和遗传算法(genetic algorithms)。最近关于随机组合优化的相关工作包括嵌套划分法(nested partitioning method)和蚁群优化元启发式算法( ant colony optimization meta-heuristic)。</p>
+<h3 id="罕见模拟-rare-simulation"><a href="#罕见模拟-rare-simulation" class="headerlink" title="罕见模拟(rare simulation)"></a>罕见模拟(rare simulation)</h3><p>罕见事件概率的估计是保证工程系统性能的关键。为了估计这个小概率，我们需要在正常运行条件下长时间模拟系统。<strong>重要性抽样</strong>是一个著名的方差减少技术，使系统在下一次模拟采用不同的概率分布，使稀有事件的发生的可能性更大。主要缺点是IS中使用的最佳参考(the optimal reference (also called tilting))参数通常很难获得。<br><strong>CE方法的优点</strong>是它提供了一个简单的自适应过程来估计最优参考参数。同时具有渐近收敛性。可用于静态和动态模型中罕见事件概率的估计。</p>
+<p>CE法可以成功地应用于<strong>确定性和随机性cop</strong>。在后者中，目标函数本身是随机的或需要通过模拟来估计。随机COPs通常发生在数据网络的随机调度、流量控制和路由以及各种基于仿真的优化问题中。</p>
+<p><strong>CE方法包含一个迭代过程</strong>，其中每个迭代可以被分解为两个阶段:1。根据指定的机制生成随机数据样本。2. 根据数据更新随机机构的参数，在下一次迭代中产生“更好的”样本。</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>连续多极值优化、缓冲区分配、静态仿真模型、电信系统的排队模型、神经计算、控制和导航、DNA序列比对、日程安排、车辆路线、强化学习、项目管理、重尾分布、CE收敛、网络可靠性、可修复系统、max-cut和两分割问题。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+                     <p class="copyright-item">
+
+                         <span>I feel honored if I helped you! If your problem is not solved, please move to <strong>GOOGLE</strong> !</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E7%AC%94%E8%AE%B0/"># 笔记</a>
+                    
+                        <a href="/tags/CE/"># CE</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2021/10/01/CE-Toy-Examples/">CE:Toy Examples</a>
+            
+            
+            <a class="next" rel="next" href="/2021/08/26/windows%E5%AE%9A%E6%97%B6%E5%85%B3%E6%9C%BA/">Windows定时关机</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Quet Weilan | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

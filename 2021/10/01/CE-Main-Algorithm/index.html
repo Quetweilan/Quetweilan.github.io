@@ -12,7 +12,7 @@
 
 
 
-<title>键盘推荐 | 微澜‘s blog</title>
+<title>CE:Main Algorithm | 微澜‘s blog</title>
 
 
 
@@ -180,7 +180,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">键盘推荐</h1>
+            <h1 class="post-title">CE:Main Algorithm</h1>
             
                 <div class="post-meta">
                     
@@ -189,14 +189,14 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">September 15, 2021&nbsp;&nbsp;22:07:50</a>
+                        Date: <a href="#">October 1, 2021&nbsp;&nbsp;16:03:32</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/%E6%8E%A8%E8%8D%90/">推荐</a>
+                                <a href="/categories/CE%E7%AC%94%E8%AE%B0/">CE笔记</a>
                             
                         </span>
                     
@@ -205,29 +205,14 @@
         </header>
 
         <div class="post-content">
-            <h1 id="FL980"><a href="#FL980" class="headerlink" title="FL980"></a>FL980</h1><h3 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h3><p>首先最重要的是配列，因为我想保留全尺寸的方向键，同时还要有小键盘，因此当第一次看到98配列键盘时我就决定是这个了。在保留需求的情况下比87配列长不了多少，但是比104的短的就很舒服。<br>我之前是DK100，所以还得适应一段时间。</p>
-<p>随即打动我的是颜值，我选的水绿，可惜蓝紫的没货，真的漂亮。</p>
-<p>价格方面决定选个合适的，比百元入门的好点，比千元发烧的差点。<br>考虑到没有多模需求，也不是机械键盘发烧友，所以买的单模6键热拔插。</p>
-<p>对于轴体我不懂，只知道青茶红黑。青动静太大，茶没有特色，黑的我有一个确实打字多了按着累，换个红试试。</p>
-<p>综合几点其实犹豫过fl980和首席玩家mk980。后来决定腹灵的原因在于驱动。也是下面介绍重点：</p>
-<h3 id="驱动"><a href="#驱动" class="headerlink" title="驱动"></a>驱动</h3><p>首先说明我对驱动看重的原因，并不是rgb，而是真的需求。<br>因为写博客或者写代码的原因，经常需要英文输入法下的小括号和中括号，但是频繁切换加上按住shift键我觉得挺够人的，所以设置当我按下9，则进行一次宏：切换英文输入法，输入小括号，切换中文输入法。</p>
-<ul>
-<li><p>建立配置文件，关联快捷键<br>我建立三个，<strong>日常-写作-快捷方式</strong><br>在日常里更改insert为切换写作，在写作里insert改为切换日常。同样日常和快捷方式的切换按键为Numlock。<br>同时为了区分，将三种配置灯光单独设置，写作和日常区别不大，则换个颜色即可，快捷方式里我将灯光关闭，只点亮设置好的案件，并用红光突出。<br>如果配置文件多，可以设置数字键1-9为配置，然后在配置里设置NumLock切换为日常即可。</p>
-</li>
-<li><p><strong>日常</strong><br>这里的按键都是默认的</p>
-</li>
-<li><p><strong>写作</strong><br>为写作打造，那么像F1-F12这些用不到的键位都可以任意设置。<br>而1-0，原本需要按住shift的，现在则可以直接改为组合键，数字交给小键盘区。</p>
-</li>
-<li><p><strong>快捷方式</strong><br>这部分可以改所有按键。</p>
-<ol>
-<li>根据常用程序首字母添加快捷启动</li>
-<li>方向键进行多媒体控制，音量，下一曲，暂停</li>
-<li>可以按键输入文本，记录复杂的密码，然后直接快捷输入即可</li>
-<li>待开发……</li>
-</ol>
-</li>
-</ul>
-<p>非常完美的符合我预期。</p>
+            <h1 id="稀有事件模拟的CE方法"><a href="#稀有事件模拟的CE方法" class="headerlink" title="稀有事件模拟的CE方法"></a>稀有事件模拟的CE方法</h1><p>The CE Method for Rare Event Simulation</p>
+<p>设X = (X1，…，Xn)是在某个空间X中取值的随机向量，设{f(·;v)}是X上关于某些基测度ν的概率密度函数(pdfs)族。这里v是一个实值参数(向量)。<br>ν在大多数(或所有)应用中要么是计数测量，要么是勒贝格测量。在前一种情况下，f 通常被称为概率质量函数，以下取取ν(dx) = dx。<br><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011137866.png"></p>
+<h2 id="CMCIS"><a href="#CMCIS" class="headerlink" title="CMCIS"></a>CMCIS</h2><p>设S是x上的某个实值函数，假设我们感兴趣的是在f(·;u)下S(x)大于或等于某个实数γ的概率。这个概率可以表示为<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011139033.png"><br>如果这个概率很小，例如小于10^-5，则称{S(X)≥γ}为罕见事件。<br>直接使用 <strong>CMC</strong>，从 f(·;u) 绘制样本X1,…,XN，则该概率的无偏估计为<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011143765.png"><br>对于稀有事件，CMC需要大量模拟，以便准确估计，即具有较小的相对误差或较窄的置信区间。</p>
+<p>采用 <strong>IS</strong> ，在空间X中从 重要抽样密度g 绘制样本X1,…,XN。<br>此时概率的无偏估计（也称LR估计值）为：<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011210426.png"></p>
+<h2 id="CE"><a href="#CE" class="headerlink" title="CE"></a>CE</h2><p>最优密度g* 为：<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011211792.png">。此时仅需一个样本即可获得0方差值。<br>但由于l 未知，则g* 未知。选择合适参数v 使g∗和f(·;v) 之间距离最小。<br>通常使用<strong>KL距离</strong>：<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011335853.png"><br>代入g* 和 f 发现，减号前面一部分与未知数 v 无关，可当作常数，减号后面则是 <strong>交叉熵</strong>。因此求最小KL距离转换为求最大交叉熵，即：<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011338140.png"><br>将上式中g* 表达式代入得<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011450568.png"><br>即：<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011451986.png"></p>
+<h2 id="CEIS"><a href="#CEIS" class="headerlink" title="CEIS"></a>CEIS</h2><p>再次使用重要抽样，改变 f(·;w)，原式可化为<br><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011513388.png"><br>其中：<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011518741.png"></p>
+<p>通过求解随机程序：<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011521024.png"><br>D 凸且可微。因此上式的解可由下面<strong>方程组解得</strong>：<br><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011531383.png"><br>可得上式v 最优解为：<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110011518855.png"><br>此处样本X1,…,XN来自 f(·;w)。<br><strong>利用方程求解的优点</strong>是解通常可以解析计算。特别是，如果随机变量的分布属于自然指数族(NEF)，就会发生这种情况。</p>
+<p>求解随机程序目标事件概率不能太小，对于罕见事件难以求解。这是因为对于罕见事件，大部分指标函数 I 的分量值为0.</p>
 
         </div>
 
@@ -251,9 +236,9 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/%E6%8E%A8%E8%8D%90/"># 推荐</a>
+                        <a href="/tags/%E7%AC%94%E8%AE%B0/"># 笔记</a>
                     
-                        <a href="/tags/%E9%94%AE%E7%9B%98/"># 键盘</a>
+                        <a href="/tags/CE/"># CE</a>
                     
                         
                 </span>
@@ -267,7 +252,7 @@
         <section class="post-nav">
             
             
-            <a class="next" rel="next" href="/2021/08/31/%E6%8A%95%E5%B1%8F%E5%88%B0PC/">投屏到PC</a>
+            <a class="next" rel="next" href="/2021/10/01/CE-Toy-Examples/">CE:Toy Examples</a>
             
         </section>
 

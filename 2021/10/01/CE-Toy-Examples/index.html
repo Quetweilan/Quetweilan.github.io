@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Quet Weilan">
+
+
+
+
+
+<title>CE:Toy Examples | 微澜‘s blog</title>
+
+
+
+    <link rel="icon" href="/rabbit.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+    <script>
+        const currentTheme = window.localStorage && window.localStorage.getItem('theme');
+        if ('dark' === currentTheme) {
+            document.getElementsByTagName('body')[0].style.backgroundColor = '#292a2d';
+            document.getElementsByTagName('body')[0].style.color = '#a9a9b3';
+        }
+    </script>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">微澜&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">微澜&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">CE:Toy Examples</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Quet Weilan</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">October 1, 2021&nbsp;&nbsp;16:00:23</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/CE%E7%AC%94%E8%AE%B0/">CE笔记</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>通过两个简单的示例来说明CE方法的方法：一个处理罕见事件模拟，另一个处理组合优化。</p>
+<h1 id="罕见事件模拟-A-Rare-Event-Simulation-Example"><a href="#罕见事件模拟-A-Rare-Event-Simulation-Example" class="headerlink" title="罕见事件模拟 A Rare Event Simulation Example"></a>罕见事件模拟 A Rare Event Simulation Example</h1><p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202109302304119.png"></p>
+<p>考虑图1的加权图，有随机权重 <strong>X1-5</strong> ，假设权值相互独立且以均值 <strong>u1-5</strong> 的指数分布。<br>定义X=（X1,…,X5），u=(u1,…,u5)。f(·;u) 表示 X 的概率密度函数( probability density function，pdf)：<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202109302303651.png"></p>
+<p>设S (X) 为从节点A到节点b的最短路径的总长度，我们希望通过仿真来估计最短路径S(X)的长度超过某个固定γ的概率。<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202109302307064.png"></p>
+<h2 id="CMCIS"><a href="#CMCIS" class="headerlink" title="CMCIS"></a>CMCIS</h2><p>一个直接的方法是使用 <strong>Crude Monte Carlo (CMC)</strong> 模拟。<br>从 X 的分布绘制随机样本 X1,…,XN。则式2 l 的无偏估计为：<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202109302313910.png"><br>然而，对于大γ，概率l 将非常小，CMC需要大量模拟，即N会非常大，因此使用<strong>重要抽样</strong>。<br>用另一个概率密度g来代替。则式2可表示为：<br><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202109302317979.png"><br><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202109302317236.png"><br>此时式2 l 的无偏估计（也称为重要抽样(is)或似然比(LR)估计量）为：<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202109302319265.png"><br>似然比 LR为 ：<img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202109302320369.png">。</p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202109302325403.png"><br>下面概述了一种用于罕见事件估计的相当通用的CE算法。</p>
+<h2 id="CE"><a href="#CE" class="headerlink" title="CE"></a>CE</h2><p>在步骤2-4中估计了最优IS参数。在步骤5这个参数被用来估计概率。我们需要提前提供分数ρ(通常在0.01和0.1之间)和参数N和N1。<br><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202109302326644.png"></p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110010008684.png"><br><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110010008642.png"></p>
+<h1 id="组合优化-A-Combinatorial-Optimization-Example"><a href="#组合优化-A-Combinatorial-Optimization-Example" class="headerlink" title="组合优化 A Combinatorial Optimization Example"></a>组合优化 A Combinatorial Optimization Example</h1><p>假设二进制向量 y = (y1，…，yn)。不知道哪些分量为0，哪些为1。用 <strong>oracle</strong> ，对于每个二进制输入向量x = (x1，…，xn)返回性能或响应<br><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110010012365.png">表示x和y元素之间匹配的次数。<br>我们的目标是提出一种随机搜索算法，通过最大化函数S(x)在n维二进制向量空间上重构(解码)未知向量y。</p>
+<p>寻找y的一种简单方式，反复生成二进制向量X = (X1，…，Xn)，X1，…，Xn 为独立的伯努利随机变量，成功概率p1，…，pn，即 <strong>X ~ Ber(p)</strong> ，p = (p1，…，pn)。使其收敛至最优值。</p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110010022063.png"></p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110010023781.png"></p>
+<p>以 步骤2种yt 多次迭代都没有变化 为<strong>停止标准</strong>。<br>或者当 步骤3中pt 收敛到一个简单向量（二进制向量） 停止。</p>
+<h3 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h3><p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/ce/202110010032501.png"></p>
+<blockquote>
+<p>算法2.1和2.2几乎是相同的。最重要的区别是在2.2算法的第3步中没有似然比项W。原因在于2.2中初始值选择较随意，而2.1中初始值的选择很重要。</p>
+</blockquote>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+                     <p class="copyright-item">
+
+                         <span>I feel honored if I helped you! If your problem is not solved, please move to <strong>GOOGLE</strong> !</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E7%AC%94%E8%AE%B0/"># 笔记</a>
+                    
+                        <a href="/tags/CE/"># CE</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2021/10/01/CE-Main-Algorithm/">CE:Main Algorithm</a>
+            
+            
+            <a class="next" rel="next" href="/2021/10/01/CE-Introduction/">CE:Introduction</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Quet Weilan | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
