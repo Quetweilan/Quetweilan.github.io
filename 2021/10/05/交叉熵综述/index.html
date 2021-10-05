@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Quet Weilan">
+
+
+
+
+
+<title>交叉熵综述 | 微澜‘s blog</title>
+
+
+
+    <link rel="icon" href="/rabbit.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+    <script>
+        const currentTheme = window.localStorage && window.localStorage.getItem('theme');
+        if ('dark' === currentTheme) {
+            document.getElementsByTagName('body')[0].style.backgroundColor = '#292a2d';
+            document.getElementsByTagName('body')[0].style.color = '#a9a9b3';
+        }
+    </script>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">微澜&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">微澜&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">交叉熵综述</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Quet Weilan</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">October 5, 2021&nbsp;&nbsp;12:07:22</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/CE%E7%AC%94%E8%AE%B0/">CE笔记</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="电力系统可靠性评估中交叉熵法研究综述"><a href="#电力系统可靠性评估中交叉熵法研究综述" class="headerlink" title="电力系统可靠性评估中交叉熵法研究综述"></a>电力系统可靠性评估中交叉熵法研究综述</h1><p><strong>摘要：</strong>交叉熵法在电力系统可靠性评估领域被广泛应用。本文总结了近5年部分相关文献的研究现状，从混合模型建模、提高评估效率和其他拓展应用三个方面进行阐述，并探讨未来发展和应用。希望对后续的研究有参考意义。<br><strong>关键词：</strong>可靠性评估；交叉熵法；综述</p>
+<h2 id="0-引言"><a href="#0-引言" class="headerlink" title="0.引言"></a>0.引言</h2><p>​        为了响应双碳目标，电力系统中投入了大量清洁能源也增加了很多不确定负荷，这些不确定性大大影响了电力系统可靠运行。因此复杂系统进行可靠性评估对运行规划非常有必要。<br>​        目前已有多种可靠性评估方法，大致可分为解析法和模拟法两大类。解析法对复杂系统评估效率低，易陷入维度灾，比较适合简单系统；模拟法中典型方法为蒙特卡洛法，蒙特卡洛法抽样次数与系统复杂程度无关，且能考虑实际运行中的随机事件，因而使用更多，但模拟法的计算精度与效率成反比。<br>​        为了解决蒙特卡洛法在评估时效率低的问题，常采用方差减小技术减少抽样次数。其中重要抽样法效果突出，其主要思想是用构造的抽样函数代替原本的抽样函数。在此基础上，现在多采用交叉熵法逼近更加准确的抽样函数。<br>​        交叉熵法沿用至今已有许多成果，本文总结了近5年的部分文献，包括但不仅限于可靠性评估领域，从混合模型建模、提高评估效率和其他拓展应用三个方面综述研究现状，并探讨未来发展趋势。希望对以后的研究有一定参考借鉴意义。</p>
+<h2 id="1-交叉熵法"><a href="#1-交叉熵法" class="headerlink" title="1.交叉熵法"></a>1.交叉熵法</h2><p>​        与重要抽样类似，都是通过用构造的最优概率密度函数(OPDF)取代原本概率密度函数，突出重要事件，降低方差，提高评估速度。二者区别在于获取新概率密度函数方法的不同：重要抽样通过原来函数与最优乘子相乘得OPDF；交叉熵法通过减小构造函数与OPDF的数学距离来获得。相较而言，交叉熵法获得的概率密度函数更加准确，因此多采用交叉熵法来构造，同时也会采用重要抽样进一步筛选重要样本加速函数的获取。<br>​        交叉熵法最早由Rubinstein于1997年应用于样本统计[1]。交叉熵源自相对熵(又称KL散度，表示两个概率分布间差异的非对称性度量)，交叉熵的值等于KL散度减去目标分布熵。若在实际情况下目标分布熵为常数，则常数可忽略，原求取最小KL散度转化为求取最大交叉熵。<br>​        由于KL散度属于更广泛的f-散度中的一种距离，文献[2]采用了其他几种衡量函数间的距离作为逼近准则，如Hellinger距离、Pearson散度、 散度，此外还提出一个由误差平方和概念拓展而来的距离公式。实验表明这些距离同样适用于求解概率密度函数，计算结果与蒙特卡洛法结果接近且用时更短，给最优函数的逼近提供了更多选择。文献[3]中提出一种基于Hamming distance的改进交叉熵用于处理多状态设备的非侵入式负载监控(NILM)事件进行分类，将该问题建模为约束优化问题，并采用一种新的惩罚方法进行求解，该方法根据当前状态与已知状态之间的汉明距离为无效事件分配惩罚。这两种都采用了交叉熵的思想而选取了不同的距离表达式。<br>​        随着软硬件的快速发展，处理大数据的机器学习算法也广泛应用在可靠性评估中，通过学习算法训练模型、减小损失函数快速得到目标函数，在混合模型的建立和评估速度上都有很大帮助。<br>​        下面分别从建立数学模型，加快评估进程以及在不同方向的扩展应用总结遇到的问题，并依据参考文献做简单概括，起抛砖引玉之用。</p>
+<h2 id="2-建立数学模型"><a href="#2-建立数学模型" class="headerlink" title="2.建立数学模型"></a>2.建立数学模型</h2><p>​        使用交叉熵法构造最优概率密度函数，则首先需要确定函数类型。目前难点主要有：(1)难以建立准确的数学模型；(2)考虑时序模型；(3)考虑变量相关性。<br>​        传统交叉熵将发电端简化为二项分布模型，这种模型只考虑发电机工作和失效两个状态，无法反应降额运行。同时随着多种新能源接入电网，发电形式更加复杂。太阳能、风能等新能源，发电情况受环境影响较大，发电的不确定性也导致建模困难。<br>​        换言之，实际情况不再符合传统的函数曲线，对于给定的数据无法直接使用传统的函数类型进行准确地数学建模。<br>​        在数字信号处理中有个重要概念：傅里叶变换，即任何波形都可以用正弦波叠加表示。基于此，通过多个高斯概率密度函数叠加而成的函数曲线代替数据曲线，即高斯混合模型建立相关模型，其本质上是一致的[4]。<br>​        高斯混合模型的确立需要注意两个方面，一是确定高斯密度函数的形状，二是确定高斯密度函数的个数。随着个数的增加，函数曲线更加贴合数据曲线，同时也增加了计算的复杂程度。这二者的权衡通常依据过往经验指定，也有交给机器算法动态判断。<br>​        文献[5]提出采用多个概率密度函数描述发电系统的状态，对各函数及其对应权重进行迭代更新，最后由各概率密度函数的加权形成最优概率密度函数。文献[6]采用期望最大化算法来指导混合分布模型的选择，以逼近最优密度；<br>​        文献[7]提出了一种改进的加权样本期望最大化算法估计GMM参数，同时采用基于密度的带噪声应用空间聚类算法决定模型数量。另一方面将单一高斯密度和混合高斯密度的CE进行对比，实验结果表明在对系统情况未知的情况下，单一高斯密度的CE法较好，二者对高维问题都未达到预期。对于高维复杂状态数据通常采取降维措施，这似乎在交叉熵中研究较少。<br>​        此外，传统交叉熵多用于非序贯蒙特卡洛法从而简化计算。不考虑时间因素的非序贯蒙特卡洛法用可接受的误差换来了效率的提高。而序贯蒙特卡洛法由于保留了系统的时序性，能够精准地模拟配电网元件的运行过程，进而求出系统的可靠性指标[8]。对于长期的运行规划，序贯分析的研究应当成为重点，但序贯分析的效率亟待提高。<br>​        文献[9]和文献[10]都进行序贯分析，为了解决序贯分析耗时长、效率低的问题，在预抽样阶段也采用序贯分析，并将使用的样本用于第二阶段的评估中。<br>​        实际中大多采用马尔科夫链与非序贯蒙特卡洛法结合，在当前状态的基础上预测状态维持时间及转移到下一状态的概率，以获得近似指标。<br>​        文献[11]将马尔科夫链蒙特卡洛与交叉熵集成，优点在于更容易寻优，需要为交叉熵参数训练指定的参数更少，状态生成简单；文献[12]提出三段式交叉熵重采样，旨在二次强化训练样本，解决短时间内转移率低的问题。<br>​        同样，马尔科夫链也不能仅仅局限在两状态元件，多状态马尔可夫模型[13-14]的建立仍是难点。<br>​        除此之外，随着新能源的加入，变量相关性也是影响建模难度的一大因素。有研究考虑变量相关性[15-16]，有文献采用截断高斯混合模型，减小相关性影响[17]，有文献用Choleskey对相关变量进行独立转换[18]。这些想法各异，需要灵活使用。<br>​        综上所述，在建模方面通常采用高斯混合模型处理复杂网络结构，利用马尔科夫链进行伪序贯分析。未来需要在高维复杂状态、变量相关性及序贯分析做进一步研究。</p>
+<h2 id="3-加快评估进程"><a href="#3-加快评估进程" class="headerlink" title="3.加快评估进程"></a>3.加快评估进程</h2><p>​        和直接采样评估不同，交叉熵法需要首先确定最优概率密度函数，因此将评估分成两个阶段：第一个阶段(即预抽样阶段)通过部分样本优化抽样函数，并在第二阶段采样进行评估，以获得可靠性指标。<br>​        为了加快评估进程，一方面选择在第一阶段快速筛选重要样本逼近最优函数，另一方面随着抽样效率的提高，评估的大部分时间花费在第二阶段的状态评估上，两方面都有学者进行研究改进。<br>​        文献[19]提出全局精英样本，将每次筛选的重要状态保留并与下一次样本进行排序重新选择精英样本，将重要样本重复利用。文献[20]更改原始不可用性，更频繁地对重要故障事件进行抽样。文献[21]提出了一种识别可能危及电力系统完整性的罕见重要事件的新方法，进一步突出重要事件。<br>​        文献[22]确定元件重要程度并形成重要状态子空间，避免已被分析的状态再次抽样，同时对剩余的系统状态采用修正概率分布进行抽样。文献[23]将交叉熵和动态故障集结合，将评估后的状态储存与新样本匹配，若一致则直接调用结果，否则进行一般评估并将结果存储。随着状态增多，这种方法的缺陷也很明显，每次索引将花费大量时间，可做进一步优化。<br>​        以上文献都是筛选重要样本计算最优函数，文献[24]另辟蹊径，利用快速傅里叶变换的直接算法快速获得最优不可用度。还有一些研究选择不同收敛指标[25-26]也提高了评估速度。<br>​        综上，无论是筛选重要样本还是加快指标获得都使评估效率更高，新方法的提出也给其他学者带来新的思路。效率是永恒的主题，我们仍在前进的路上。</p>
+<h2 id="4-拓展应用"><a href="#4-拓展应用" class="headerlink" title="4.拓展应用"></a>4.拓展应用</h2><p>​        交叉熵最本质的概念是衡量两个函数间的差值，这一概念不仅仅用于配电网的可靠性评估，在组合优化、最优调度等优化方面都有广泛应用，也常常给研究人员带来新的灵感。<br>​        文献[27]提出多层交叉熵，通过增加中间失效事件，使失效事件逐渐向失效域靠近。标准多层交叉熵平滑参数选择困难，文献[28]在此基础上提出改进多层交叉熵，改进后不需要设置平滑系数。<br>​        在组合优化问题[29]中，交叉熵法拓展出多目标交叉熵法，在这类应用中尤其要注意结果不能陷入局部最优。文献[30]用精英样本修正模型，使新个体分布更优，同时随机调整模型防止局部最优。文献[31]提出基于分解的多目标交叉熵算法，将组合优化问题分解，在获得一组解后，一般采用模糊集机制来选择最优的妥协方案。<br>​        在分布式流水线绿色调度问题上，文献[32-33]采用两阶段选择样本区域：全局搜索阶段搜索解空间的优质区域，局部搜速阶段用自适应领域操作对优质区域进行更详细搜索。<br>​        文献[34]考虑新能源和负荷的不确定性提出了一种鲁棒交叉熵协方差矩阵自适应进化策略来求解动态最优潮流；文献[35]将遗传算法的p系统用于调度机组启停，结合ce的仿生膜用于动态经济调度。<br>​        交叉熵法的应用十分广泛，作者只节选部分作为代表。针对不同领域、不同问题采取的不同交叉熵对于可靠性评估也具有启发作用。</p>
+<h2 id="5-结束语"><a href="#5-结束语" class="headerlink" title="5.结束语"></a>5.结束语</h2><p>​        由新能源加入电网考虑传统交叉熵法在建模方面的不足，需要考虑多状态、多形式的电源，同时强调序贯分析的重要性。在效率方面结合评估的两个阶段分别采取优化策略，大大加快了评估进程。<br>​        此外，还列举交叉熵法在最优调度等方面的应用，希望能给后续研究有一定的参考意义。</p>
+<h2 id="6-参考文献"><a href="#6-参考文献" class="headerlink" title="6.参考文献"></a>6.参考文献</h2><p>[1]     Reuven Y. Rubinstein. Optimization of computer simulation models with rare events[J]. European Journal of Operational Research，1997，99(1):<br>[2]     双滟杰. 电网可靠性蒙特卡罗仿真中最优重要抽样函数求解算法研究[D].重庆大学，2017.<br>[3]     Modified Cross-Entropy Method for Classification of Events in NILM Systems<br>[4]     罗建勇，赵客壮.基于高斯混合模型和交叉熵的电网可靠性评估算法[J].电网与清洁能源，2017，33(12):8-11.<br>[5]     王少伟，罗萍萍.基于混合模型和交叉熵重要性抽样的发电系统可靠性评估[J].电测与仪表，2017，54(03):35-41.<br>[6]     Quoc Dung Cao，Youngjun Choe. Cross-entropy based importance sampling for stochastic simulation models[J]. Reliability Engineering and System Safety，2019，191:<br>[7]     Sebastian Geyer，Iason Papaioannou，Daniel Straub. Cross entropy-based importance sampling using Gaussian densities revisited[J]. Structural Safety，2019，76:<br>[8]     宋忧乐，王科，朱永梅，刘涌，袁秋实.配电网可靠性评估之序贯蒙特卡洛模拟法综述[J].电器与能效管理技术，2020(01):90-93+99.<br>[9]     Engineering - Power Systems; New Power Systems Findings from Chongqing University Reported (Composite Power System Reliability Evaluation Based On Enhanced Sequential Cross-entropy Monte Carlo Simulation)[J]. Journal of Technology &amp; Science，2019:<br>[10]     Baracy Yago L.，Venturini Lucas F.，Branco Nilton O.，Issicaba Diego，Grilo Ahda P.. Recloser placement optimization using the cross-entropy method and reassessment of Monte Carlo sampled states[J]. Electric Power Systems Research，2020，189:<br>[11]     Yue Wang. Probabilistic spinning reserve adequacy evaluation for generating systems using an Markov chain Monte Carlo-integrated cross-entropy method[J]. IET Generation， Transmission &amp; Distribution，2015，9(8):<br>[12]     王越，郭创新，文云峰，李树青，袁翔.一种三段式序贯交叉熵重采样方法及其在电力系统短期可靠性评估中的应用[J].中国电机工程学报，2013，33(28):94-100+15.<br>[13]     Yue Wang. Risk assessment of stochastic spinning reserve of a wind-integrated multi-state generating system based on a cross-entropy method[J]. IET Generation， Transmission &amp; Distribution，2017，11(2):<br>[14]     O. A. Ansari， C. Y. Chung and E. Zio， “A Novel Framework for the Operational Reliability Evaluation of Integrated Electric Power–Gas Networks，” in IEEE Transactions on Smart Grid， vol. 12， no. 5， pp. 3901-3913， Sept. 2021， doi: 10.1109/TSG.2021.3075918.<br>[15]     Zhuang， Xinran; Ye， Chengjin; Ding， Yi; Cheng， Lin; Song， Yonghua; Ye， Shuiquan; Tian， Shiming; Chen， Rong: ‘Data-driven efficient reliability evaluation of power systems with wind penetration: an integrated GANs and CE method’， IET Generation， Transmission &amp; Distribution， 2020， 14， (4)， p. 577-584， DOI: 10.1049/iet-gtd.2019.1048<br>[16]     E. Tómasson and L. Söder， “Generation Adequacy Analysis of Multi-Area Power Systems With a High Share of Wind Power，” in IEEE Transactions on Power Systems， vol. 33， no. 4， pp. 3854-3862， July 2018， doi: 10.1109/TPWRS.2017.2769840.<br>[17]     Cai Jilin，Xu Qingshan. Capacity value evaluation of wind farms considering the correlation between wind power output and load[J]. IET Generation， Transmission &amp; Distribution，2021，15(9):<br>[18]     卫志农，廖星星，薛溟枫，毛晓波，孙国强，臧海祥.计及相关性及改进交叉熵法的电-热互联综合能源系统风险评估[J].电网技术，2021，45(04):1295-1304.<br>[19]     任超，张航，李洪双.随机优化的改进交叉熵方法[J].北京航空航天大学学报，2018，44(01):205-214.<br>[20]     R. A. González-Fernández， A. M. Leite da Silva， L. C. Resende and M. T. Schilling， “Composite Systems Reliability Evaluation Based on Monte Carlo Simulation and Cross-Entropy Methods，” in IEEE Transactions on Power Systems， vol. 28， no. 4， pp. 4598-4606， Nov. 2013， doi: 10.1109/TPWRS.2013.2267154.<br>[21]     F. Belmudes， D. Ernst and L. Wehenkel， “Cross-Entropy Based Rare-Event Simulation for the Identification of Dangerous Events in Power Systems，” Proceedings of the 10th International Conference on Probablistic Methods Applied to Power Systems， 2008， pp. 1-7.<br>[22]     王元恺.基于交叉熵重要抽样和状态筛选的电力系统可靠性计算方法[J].供用电，2020，37(02):54-59.<br>[23]     许鹏程，陈启，刘文霞，王舒，刘宗歧.引入交叉熵与动态故障集的含风电大电网可靠性评估[J].电力系统自动化，2016，40(13):28-34.<br>[24]     L. d. M. Carvalho， R. A. González-Fernández， A. M. Leite da Silva， M. A. da Rosa and V. Miranda， “Simplified Cross-Entropy Based Approach for Generating Capacity Reliability Assessment，” in IEEE Transactions on Power Systems， vol. 28， no. 2， pp. 1609-1616， May 2013， doi: 10.1109/TPWRS.2012.2213618.<br>[25]     史朝印，吕震宙，李璐祎，王燕萍.基于自适应Kriging代理模型的交叉熵重要抽样法[J].航空学报，2020，41(01):179-190.<br>[26]     张恒，刘祖源，冯佰威，董素贞.改进的交叉熵法在船型优化中的应用[J].哈尔滨工程大学学报，2018，39(02):261-267.<br>[27]     蔡琦，蒋立志，张永发.基于多层交叉熵方法的舰船核动力装置非能动系统可靠性评估[J].系统工程与电子技术，2019，41(03):681-685.<br>[28]     张永发，蒋立志，蔡琦，刘小丫，焦猛.基于改进多层交叉熵方法的核动力装置非能动系统可靠性评估[J].核动力工程，2021，42(04):186-190.<br>[29]     D. Ernst， M. Glavic， G. Stan， S. Mannor and L. Wehenkel， “The cross-entropy method for power system combinatorial optimization problems，” 2007 IEEE Lausanne Power Tech， 2007， pp. 1290-1295， doi: 10.1109/PCT.2007.4538502.<br>[30]     赵舵，唐启超，余志斌.一种采用改进交叉熵的多目标优化问题求解方法[J].西安交通大学学报，2019，53(03):66-74.<br>[31]     Energy - Renewable Energy; Findings from Shenzhen University in the Area of Renewable Energy Described (Cross Entropy Optimization Based On Decomposition for Multi-objective Economic Emission Dispatch Considering Renewable Energy Generation Uncertainties)[J]. Energy Weekly News，2020:<br>[32]     佘明哲，钱斌，胡蓉，吴丽萍，向凤红.混合交叉熵算法求解模糊分布式装配流水线低碳调度问题[J].控制理论与应用，2020，37(10):2081-2092.<br>[33]     钱斌，佘明哲，胡蓉，郭宁，向凤红.超启发式交叉熵算法求解模糊分布式流水线绿色调度问题[J].控制与决策，2021，36(06):1387-1396.<br>[34]     Sarda Jigar，Pandya Kartik，Lee Kwang Y.. Dynamic optimal power flow with cross entropy covariance matrix adaption evolutionary strategy for systems with electric vehicles and renewable generators[J]. International Journal of Energy Research，2021，45(7):<br>[35]     Energy; Reports from South China University of Technology Describe Recent Advances in Energy (A Cross-entropy-based Hybrid Membrane Computing Method for Power System Unit Commitment Problems)[J]. Energy Weekly News，2019:</p>
+<p>&lt;版权所有，仅供参考&gt;<br>&lt;Copyright © 2021.9 - Quet_Weilan.&gt;</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+                     <p class="copyright-item">
+
+                         <span>I feel honored if I helped you! If your problem is not solved, please move to <strong>GOOGLE</strong> !</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E7%AC%94%E8%AE%B0/"># 笔记</a>
+                    
+                        <a href="/tags/CE/"># CE</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2021/10/05/Onedrive-%E5%AD%90%E5%8F%B7/">Onedrive_子号</a>
+            
+            
+            <a class="next" rel="next" href="/2021/10/01/CE-Main-Algorithm/">CE:Main Algorithm</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Quet Weilan | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
