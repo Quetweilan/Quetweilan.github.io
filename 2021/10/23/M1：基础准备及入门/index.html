@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Quet Weilan">
+
+
+
+
+
+<title>M1：基础准备及入门 | 微澜‘s blog</title>
+
+
+
+    <link rel="icon" href="/rabbit.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+    <script>
+        const currentTheme = window.localStorage && window.localStorage.getItem('theme');
+        if ('dark' === currentTheme) {
+            document.getElementsByTagName('body')[0].style.backgroundColor = '#292a2d';
+            document.getElementsByTagName('body')[0].style.color = '#a9a9b3';
+        }
+    </script>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">微澜&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">微澜&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">M1：基础准备及入门</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Quet Weilan</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">October 23, 2021&nbsp;&nbsp;15:17:57</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Matlab%E7%AC%94%E8%AE%B0/">Matlab笔记</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="M1：基础准备及入门"><a href="#M1：基础准备及入门" class="headerlink" title="M1：基础准备及入门"></a>M1：基础准备及入门</h1><h1 id="1-2-命令窗运行入门"><a href="#1-2-命令窗运行入门" class="headerlink" title="1.2 命令窗运行入门"></a>1.2 命令窗运行入门</h1><h2 id="1-2-2-简单使用"><a href="#1-2-2-简单使用" class="headerlink" title="1.2.2 简单使用"></a>1.2.2 简单使用</h2><p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110231514057.png" alt="Untitled"></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">12</span>+<span class="number">2</span>*<span class="built_in">sin</span>(<span class="built_in">pi</span>/<span class="number">6</span>))/<span class="number">3.25</span>^<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>命令行过长时用3个及以上“.”表示续行。注意，加在运算符后回车，在1/4处回车报错。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">S=<span class="number">1</span><span class="number">-1</span>/<span class="number">2</span>+<span class="number">1</span>/<span class="number">3</span><span class="number">-1</span>/<span class="number">4</span>+...</span><br><span class="line"><span class="number">1</span>/<span class="number">5</span><span class="number">-1</span>/<span class="number">6</span>+<span class="number">1</span>/<span class="number">7</span><span class="number">-1</span>/<span class="number">8</span></span><br></pre></td></tr></table></figure>
+
+<p>不指定则值赋给ans，指定S则赋给S，使用clear命令清除。</p>
+<h2 id="1-2-3-数值、变量和表达式"><a href="#1-2-3-数值、变量和表达式" class="headerlink" title="1.2.3 数值、变量和表达式"></a>1.2.3 数值、变量和表达式</h2><h3 id="数值"><a href="#数值" class="headerlink" title="数值"></a>数值</h3><p>带正负号和小数点的十进制，或科学计数，如-1.3e-3。</p>
+<h3 id="变量命名规则"><a href="#变量命名规则" class="headerlink" title="变量命名规则"></a>变量命名规则</h3><p>变量名、函数名区分大小写。第一个字符必须是英文字母，最多63字符(英文、数字、下划线)。</p>
+<p>为避免变量名和matlab内置关键词(if，while)、函数名(sin)、变量名(pi)、文件名(rtw)重复，可通过命令检验：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iskeyword <span class="keyword">if</span></span><br></pre></td></tr></table></figure>
+
+<p>结果为0，则不是关键词。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exist <span class="built_in">sin</span></span><br></pre></td></tr></table></figure>
+
+<p>结果为0，则不重复。</p>
+<h3 id="特殊数值的专用变量名"><a href="#特殊数值的专用变量名" class="headerlink" title="特殊数值的专用变量名"></a>特殊数值的专用变量名</h3><p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110231514994.png" alt="Untitled"></p>
+<p>对变量用赋值语句可临时赋值，使用clear或重启matlab后还原。</p>
+<p>遵循IEEE算法规则，被0除是允许的。用 Inf 或 NaN 记述。</p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110231514502.png" alt="Untitled"></p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110231515670.png" alt="Untitled"></p>
+<h3 id="运算符和表达式"><a href="#运算符和表达式" class="headerlink" title="运算符和表达式"></a>运算符和表达式</h3><p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110231515372.png" alt="Untitled"></p>
+<p><strong>数组运算符</strong>：对数组里每个元素运算；<strong>矩阵运算符</strong>：对整体？</p>
+<p><strong>表达式的优先级</strong>：指数&gt;乘除&gt;加减，括号先运算。</p>
+<h3 id="复数运算"><a href="#复数运算" class="headerlink" title="复数运算"></a>复数运算</h3><p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110231515482.png" alt="Untitled"></p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110231515078.png" alt="Untitled"></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">z1=<span class="number">4</span>+<span class="number">3</span><span class="built_in">i</span>;</span><br><span class="line">z2=<span class="number">1</span>+<span class="number">2</span>*<span class="built_in">i</span>;</span><br><span class="line">z3=<span class="number">2</span>*<span class="built_in">exp</span>(<span class="built_in">i</span>*<span class="built_in">pi</span>/<span class="number">6</span>);</span><br><span class="line">z=z1*z2/z3</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">realz=<span class="built_in">real</span>(z)</span><br><span class="line">imagz=<span class="built_in">imag</span>(z)</span><br><span class="line">magnitude=<span class="built_in">abs</span>(z)</span><br><span class="line">anglez_radian=<span class="built_in">angle</span>(z) <span class="comment">%弧度</span></span><br><span class="line">anglez_degree=<span class="built_in">angle</span>(z)*<span class="number">180</span>/<span class="built_in">pi</span> <span class="comment">%度数</span></span><br></pre></td></tr></table></figure>
+
+<p>一行多命令用分号或逗号分开。命令行分号结尾，运算结果不显示。shift+enter换行。</p>
+<h3 id="复数运算的几何意义"><a href="#复数运算的几何意义" class="headerlink" title="复数运算的几何意义"></a>复数运算的几何意义</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">z1=<span class="number">4</span>+<span class="number">3</span><span class="built_in">i</span>;z2=<span class="number">1</span>+<span class="number">2</span><span class="built_in">i</span>;z12=z1+z2</span><br><span class="line"></span><br><span class="line">clf <span class="comment">%清空图形窗</span></span><br><span class="line"><span class="built_in">hold</span> on <span class="comment">%一个窗口通过plot绘制多个图形</span></span><br><span class="line"><span class="built_in">plot</span>([<span class="number">0</span>,z1,z12],<span class="string">&#x27;-b&#x27;</span>,<span class="string">&#x27;LineWidth&#x27;</span>,<span class="number">3</span>)</span><br><span class="line"><span class="built_in">plot</span>([<span class="number">0</span>,z12],<span class="string">&#x27;-r&#x27;</span>,<span class="string">&#x27;LineWidth&#x27;</span>,<span class="number">3</span>)</span><br><span class="line"><span class="built_in">plot</span>([z1,z12],<span class="string">&#x27;ob&#x27;</span>,<span class="string">&#x27;MarkerSize&#x27;</span>,<span class="number">8</span>)</span><br><span class="line"><span class="built_in">hold</span> off <span class="comment">%释放同图纸绘图控制</span></span><br><span class="line">grid on <span class="comment">%图纸分割线</span></span><br><span class="line">axis equal <span class="comment">%横纵坐标等刻度</span></span><br><span class="line">axis ([<span class="number">0</span>,<span class="number">6</span>,<span class="number">0</span>,<span class="number">6</span>])</span><br><span class="line">text(<span class="number">3.5</span>,<span class="number">2.3</span>,<span class="string">&#x27;z1&#x27;</span>)</span><br><span class="line">text(<span class="number">5</span>,<span class="number">4.5</span>,<span class="string">&#x27;z2&#x27;</span>)</span><br><span class="line">text(<span class="number">2.5</span>,<span class="number">3.5</span>,<span class="string">&#x27;z12&#x27;</span>)</span><br><span class="line">xlabel(<span class="string">&#x27;real&#x27;</span>)</span><br><span class="line">ylabel(<span class="string">&#x27;imag&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>特殊</strong></p>
+<p>8^(1/3)=2；(-8)^(1/3)=1.0000 + 1.7321i；<strong>nthroot</strong>(-8,3)=-2. <strong>根号函数sqrt();</strong></p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110231515188.png" alt="Untitled"></p>
+<p>(-8)^(1/3)默认给出第一象限方根。</p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110231515579.png" alt="Untitled"></p>
+<h3 id="面向数组和矩阵的运算"><a href="#面向数组和矩阵的运算" class="headerlink" title="面向数组和矩阵的运算"></a>面向数组和矩阵的运算</h3><p>数组输入：逗号、空格间隔元素，分号间隔行。也可以用下面这种，视觉上分行。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">AR=[<span class="number">1</span>,<span class="number">2</span>;<span class="number">3</span> <span class="number">4</span>]</span><br><span class="line">AI=[<span class="number">5</span> <span class="number">6</span></span><br><span class="line">    <span class="number">7</span>,<span class="number">8</span>]</span><br><span class="line">Z=[<span class="number">1</span><span class="number">-2</span><span class="built_in">i</span> <span class="number">3</span><span class="number">-4</span><span class="built_in">i</span>;<span class="number">5</span><span class="number">-6</span><span class="built_in">i</span>,<span class="number">7</span><span class="number">-8</span><span class="built_in">i</span>] <span class="comment">%复数数组</span></span><br><span class="line">A=AR-AI*<span class="built_in">i</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%求个元素模和幅角</span></span><br><span class="line"><span class="comment">%逐个</span></span><br><span class="line">AR=[<span class="number">1</span>,<span class="number">3</span>;<span class="number">2</span>,<span class="number">4</span>];AI=[<span class="number">5</span>,<span class="number">7</span>;<span class="number">6</span>,<span class="number">8</span>];A=AR-AI*<span class="built_in">i</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> m=<span class="number">1</span>:<span class="number">2</span></span><br><span class="line">    <span class="keyword">for</span> n=<span class="number">1</span>:<span class="number">2</span></span><br><span class="line">        Am1(m,n)=<span class="built_in">abs</span>(A(m,n));</span><br><span class="line">        Aa1(m,n)=<span class="built_in">angle</span>(A(m,n))*<span class="number">180</span>/<span class="built_in">pi</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">Am1,Aa1</span><br><span class="line"><span class="comment">%直接</span></span><br><span class="line">AM2=<span class="built_in">abs</span>(A),Aa2=<span class="built_in">angle</span>(A)*<span class="number">180</span>/<span class="built_in">pi</span></span><br><span class="line"><span class="comment">%求实部和虚部</span></span><br><span class="line">Areal=<span class="built_in">real</span>(A),Aimag=<span class="built_in">imag</span>(A)</span><br></pre></td></tr></table></figure>
+
+<h1 id="1-3-命令窗操作要旨"><a href="#1-3-命令窗操作要旨" class="headerlink" title="1.3 命令窗操作要旨"></a>1.3 命令窗操作要旨</h1><h2 id="1-3-1-显示方式"><a href="#1-3-1-显示方式" class="headerlink" title="1.3.1 显示方式"></a>1.3.1 显示方式</h2><p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110231515025.png" alt="Untitled"></p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110231516393.png" alt="Untitled"></p>
+<p>format命令进行的设置重启matlab后失效。永久设定需要到【主页-预设】</p>
+<h2 id="1-3-2-常用标点"><a href="#1-3-2-常用标点" class="headerlink" title="1.3.2 常用标点"></a>1.3.2 常用标点</h2><p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110231516891.png" alt="Untitled"></p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110231516996.png" alt="Untitled"></p>
+<p><a href="M1%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%87%86%E5%A4%87%E5%8F%8A%E5%85%A5%E9%97%A8%20f1032fa62a8d403093e2583c717e9334/%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E6%A0%87%E7%82%B9%E7%AC%A6%E5%8F%B7.pdf">运算符和标点符号.pdf</a></p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110231516106.png" alt="Untitled"></p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110231516698.png" alt="Untitled"></p>
+<p>%{ 和 %} 符号将超出一行的注释块括起来。</p>
+<p>单引号，字符数组。双引号，字符串标量</p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110231516270.png" alt="Untitled"></p>
+<h2 id="1-3-3-命令窗常用命令"><a href="#1-3-3-命令窗常用命令" class="headerlink" title="1.3.3 命令窗常用命令"></a>1.3.3 命令窗常用命令</h2><p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110231516581.png" alt="Untitled"></p>
+<p>ESC清除当前行</p>
+<h1 id="1-4-当前文件夹和路径设置器"><a href="#1-4-当前文件夹和路径设置器" class="headerlink" title="1.4 当前文件夹和路径设置器"></a>1.4 当前文件夹和路径设置器</h1><p>启动默认当前文件夹为matlab根目录下bin文件夹。</p>
+<p>pathtool添加路径。添加路径最好置顶或置底，避免错误。</p>
+<h1 id="1-5-工作区和历史命令窗"><a href="#1-5-工作区和历史命令窗" class="headerlink" title="1.5 工作区和历史命令窗"></a>1.5 工作区和历史命令窗</h1><p>打开变量：1）双击工作区中变量；2）【主页-打开变量】；3）openvar(A)；</p>
+<p>历史记录选择命令，可右键创建脚本。</p>
+<h1 id="1-6-图形窗及图形的绘制"><a href="#1-6-图形窗及图形的绘制" class="headerlink" title="1.6 图形窗及图形的绘制"></a>1.6 图形窗及图形的绘制</h1><p>在工作区选择变量，在【绘图-plot】，在属性里改变线形、颜色、标记等。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+                     <p class="copyright-item">
+
+                         <span>I feel honored if I helped you! If your problem is not solved, please move to <strong>GOOGLE</strong> !</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E7%AC%94%E8%AE%B0/"># 笔记</a>
+                    
+                        <a href="/tags/Matlab/"># Matlab</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2021/10/06/%E5%85%B3%E4%BA%8E%E9%9A%8F%E7%AC%94%E8%BF%99%E4%BB%B6%E4%BA%8B/">关于随笔这件事</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Quet Weilan | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
