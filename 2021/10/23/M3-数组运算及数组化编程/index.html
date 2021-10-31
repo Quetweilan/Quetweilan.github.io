@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Quet Weilan">
+
+
+
+
+
+<title>M3：数组运算及数组化编程 | 微澜‘s blog</title>
+
+
+
+    <link rel="icon" href="/rabbit.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+    <script>
+        const currentTheme = window.localStorage && window.localStorage.getItem('theme');
+        if ('dark' === currentTheme) {
+            document.getElementsByTagName('body')[0].style.backgroundColor = '#292a2d';
+            document.getElementsByTagName('body')[0].style.color = '#a9a9b3';
+        }
+    </script>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">微澜&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">微澜&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">M3：数组运算及数组化编程</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Quet Weilan</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">October 23, 2021&nbsp;&nbsp;15:17:57</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Matlab%E7%AC%94%E8%AE%B0/">Matlab笔记</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="3-1-数组、结构、创建"><a href="#3-1-数组、结构、创建" class="headerlink" title="3.1 数组、结构、创建"></a>3.1 数组、结构、创建</h1><h2 id="3-1-1-数组及其结构"><a href="#3-1-1-数组及其结构" class="headerlink" title="3.1.1 数组及其结构"></a>3.1.1 数组及其结构</h2><p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110311459773.png" alt="Untitled"></p>
+<p><strong>空矩阵：</strong> 至少有一个维规模为 0 。M码为 [ ] 。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Nd=<span class="built_in">ndims</span>(A), <span class="comment">%维度</span></span><br><span class="line">S=<span class="built_in">size</span>(A), <span class="comment">%各维度规模</span></span><br><span class="line">Snd=<span class="built_in">size</span>(A,Nd), <span class="comment">%第Nd维度规模</span></span><br><span class="line">L=<span class="built_in">length</span>(A), <span class="comment">%所有维度中规模最大值</span></span><br><span class="line">Ne=<span class="built_in">numel</span>(A) <span class="comment">%A中元素总数</span></span><br><span class="line"><span class="comment">%A可以是数组、符号对象数组、字符串数组、元胞数组</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-1-2-行列数组创建"><a href="#3-1-2-行列数组创建" class="headerlink" title="3.1.2 行列数组创建"></a>3.1.2 行列数组创建</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">A=<span class="number">1</span>:<span class="number">2</span>:<span class="number">10</span> <span class="comment">%  1  3  5  7  9</span></span><br><span class="line">B=<span class="built_in">linspace</span>(<span class="number">1</span>,<span class="number">10</span>,<span class="number">6</span>) <span class="comment">%1.0000    2.8000    4.6000    6.4000    8.2000   10.0000</span></span><br><span class="line">C=<span class="built_in">logspace</span>(<span class="number">1</span>, <span class="number">10</span>, <span class="number">5</span>) <span class="comment">%0.0000    0.0000    0.0000    0.0056    1.0000</span></span><br><span class="line"><span class="comment">%必须逗号分隔</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>a:inc:b（b-a）是步长整数倍，则最后一个数=b，否则保证最后一个数绝对值&lt;b绝对值。不加步长默认为1.</li>
+<li>等价于a:(b-a)/(n-1):b</li>
+</ol>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110311459171.png" alt="Untitled"></p>
+<p><strong>利用函数创建</strong></p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110311459751.png" alt="Untitled"></p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110311459852.png" alt="Untitled"></p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110311459357.png" alt="Untitled"></p>
+<h2 id="3-1-3-二维数组创建"><a href="#3-1-3-二维数组创建" class="headerlink" title="3.1.3 二维数组创建"></a>3.1.3 二维数组创建</h2><p>手动输入。</p>
+<p>主页-创建变量，变量重命名，变量保存。（保存.m 文件，打开时输入文件名即可，不加.m）</p>
+<h2 id="3-1-4-数组构建"><a href="#3-1-4-数组构建" class="headerlink" title="3.1.4 数组构建"></a>3.1.4 数组构建</h2><p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110311459343.png" alt="Untitled"></p>
+<p>rot90(A,2) 旋转两次。</p>
+<h1 id="3-2-数组元素编址及寻访"><a href="#3-2-数组元素编址及寻访" class="headerlink" title="3.2 数组元素编址及寻访"></a>3.2 数组元素编址及寻访</h1><h2 id="3-2-1-编址"><a href="#3-2-1-编址" class="headerlink" title="3.2.1 编址"></a>3.2.1 编址</h2><p>全下标编址 和 单序号编址。</p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110311459881.png" alt="Untitled"></p>
+<h2 id="3-2-2-寻访"><a href="#3-2-2-寻访" class="headerlink" title="3.2.2 寻访"></a>3.2.2 寻访</h2><p>按址寻访 和 按条件寻访。</p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110311500457.png" alt="Untitled"></p>
+<p><img src="M3%EF%BC%9A%E6%95%B0%E7%BB%84%E8%BF%90%E7%AE%97%E5%8F%8A%E6%95%B0%E7%BB%84%E5%8C%96%E7%BC%96%E7%A8%8B%2014ac2265c54046e197c8bab1d2fe761a/Untitled%208.png" alt="Untitled"></p>
+<p><strong>按址赋值</strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">A(r,c)=<span class="built_in">zeros</span>(<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line">A([<span class="number">1</span>,<span class="keyword">end</span>])=-A([<span class="number">1</span>,<span class="keyword">end</span>]) <span class="comment">%单序号，首尾取负</span></span><br><span class="line"><span class="comment">%全下标中end表示最后一行或最后一列。单序号中end表示最后一个元素。</span></span><br><span class="line"><span class="comment">%home无意义</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">L=A&lt;=<span class="number">0</span></span><br><span class="line">AL=A(L)&#x27;</span><br><span class="line">A(L)=<span class="number">32</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="3-3-数组运算"><a href="#3-3-数组运算" class="headerlink" title="3.3 数组运算"></a>3.3 数组运算</h1><p>标量与数组的运算表示：标量与数组的每个元素运算；</p>
+<p>数组间运算表示：数组的对应元素运算；</p>
+<h2 id="3-3-1-运算符"><a href="#3-3-1-运算符" class="headerlink" title="3.3.1 运算符"></a>3.3.1 运算符</h2><p>算术运算：</p>
+<p>关系运算：运算结果为1（真）或0（假）</p>
+<p>逻辑运算：非0为真，0为假</p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110311500139.png" alt="Untitled"></p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110311500451.png" alt="Untitled"></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">t=<span class="number">-3</span>*<span class="built_in">pi</span>:<span class="built_in">pi</span>/<span class="number">10</span>:<span class="number">3</span>*<span class="built_in">pi</span>;</span><br><span class="line">st=<span class="built_in">sin</span>(t);</span><br><span class="line">y=st./t;</span><br><span class="line">Lt=(t==<span class="number">0</span>);</span><br><span class="line">tt=t+Lt.*<span class="built_in">realmin</span>;</span><br><span class="line">yy=<span class="built_in">sin</span>(tt)./tt;</span><br><span class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>),<span class="built_in">plot</span>(t,y,<span class="string">&#x27;LineWidth&#x27;</span>,<span class="number">2</span>),axis([<span class="number">-9</span>,<span class="number">9</span>,<span class="number">-0.5</span>,<span class="number">1.2</span>]),</span><br><span class="line">xlabel(<span class="string">&#x27;t&#x27;</span>),ylabel(<span class="string">&#x27;y&#x27;</span>),title(<span class="string">&#x27;残缺图形&#x27;</span>)</span><br><span class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>),<span class="built_in">plot</span>(tt,yy,<span class="string">&#x27;LineWidth&#x27;</span>,<span class="number">2</span>),axis([<span class="number">-9</span>,<span class="number">9</span>,<span class="number">-0.5</span>,<span class="number">1.2</span>]),</span><br><span class="line">xlabel(<span class="string">&#x27;tt&#x27;</span>),ylabel(<span class="string">&#x27;yy&#x27;</span>),title(<span class="string">&#x27;正确图形&#x27;</span>)</span><br><span class="line"><span class="comment">%subplot 组合图</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%输出 disp sprintf fprintf</span></span><br><span class="line">name = <span class="string">&#x27;Alice&#x27;</span>;   </span><br><span class="line">age = <span class="number">12</span>;</span><br><span class="line">fprintf(<span class="string">&#x27;%s will be %d this year.\n&#x27;</span>,name,age)</span><br><span class="line">sprintf(<span class="string">&#x27;%s will be %d this year.&#x27;</span>,name,age)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">A=[<span class="number">-2</span> <span class="number">-1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span>]</span><br><span class="line">B=[<span class="number">0</span> <span class="number">-1</span> <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">-2</span> <span class="number">-3</span>]</span><br><span class="line">R1=A==B</span><br><span class="line">R2=A&gt;B</span><br><span class="line">fprintf(<span class="string">&#x27;R1数据类型 %s \n&#x27;</span>,class(R1))</span><br><span class="line">fprintf(<span class="string">&#x27;R2数据属于逻辑类？（1真0假）%d \n&#x27;</span>,islogical(R2))</span><br><span class="line"></span><br><span class="line">LA=logical(A)</span><br><span class="line">LB=logical(B)</span><br><span class="line">L1=LA&amp;LB</span><br><span class="line">LL1=A&amp;B</span><br><span class="line"></span><br><span class="line">total=all([<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>])</span><br><span class="line"><span class="comment">%数组元素全部非0</span></span><br><span class="line">anyone=any([<span class="number">1</span> <span class="number">0</span> <span class="number">2</span> <span class="number">1</span> <span class="number">3</span>])</span><br><span class="line"><span class="comment">%数组元素非全0</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-3-2-实施数组运算的函数"><a href="#3-3-2-实施数组运算的函数" class="headerlink" title="3.3.2 实施数组运算的函数"></a>3.3.2 实施数组运算的函数</h2><p>对数组的函数，表示对数组每个元素的函数运算。</p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110311500754.png" alt="Untitled"></p>
+<h2 id="3-3-3-溢出"><a href="#3-3-3-溢出" class="headerlink" title="3.3.3 溢出"></a>3.3.3 溢出</h2><p>避免超过上限realmax（即上溢出，overflow），定义为无穷大Inf</p>
+<p>避免超过下限realmin（即下溢出，underflow），定义为0</p>
+<p>无定义的量用NaN表示</p>
+<h2 id="3-3-4-数组化编程"><a href="#3-3-4-数组化编程" class="headerlink" title="3.3.4 数组化编程"></a>3.3.4 数组化编程</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%exm1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">y</span>=<span class="title">exm1</span><span class="params">(x)</span></span></span><br><span class="line">M=<span class="built_in">length</span>(x);</span><br><span class="line">y=<span class="built_in">zeros</span>(<span class="number">1</span>,M);</span><br><span class="line"><span class="keyword">for</span> jj=<span class="number">1</span>:M</span><br><span class="line">    <span class="keyword">if</span> x(jj)&lt;=<span class="number">-1</span></span><br><span class="line">        y(jj)=x(jj);</span><br><span class="line">    <span class="keyword">elseif</span> x(jj)&gt;<span class="number">-1</span> &amp;&amp; x(jj)&lt;=<span class="number">1</span></span><br><span class="line">        y(jj)=x(jj)^<span class="number">3</span>*<span class="built_in">cos</span>(<span class="number">2</span>*<span class="built_in">pi</span>*x(jj));</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        y(jj)=<span class="built_in">exp</span>(-x(jj)+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%exm2</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">y</span>=<span class="title">exm2</span><span class="params">(x)</span></span></span><br><span class="line">L1 = x&lt;=<span class="number">-1</span>;</span><br><span class="line">L2 = <span class="number">-1</span>&lt;x &amp; x&lt;=<span class="number">1</span>; <span class="comment">%和上面的与不同，少一个&amp;</span></span><br><span class="line">L3 = <span class="number">1</span>&lt;x;</span><br><span class="line">y=<span class="built_in">zeros</span>(<span class="built_in">size</span>(x));</span><br><span class="line">y(L1) = x(L1);</span><br><span class="line">y(L2) = x(L2).^<span class="number">3.</span>*<span class="built_in">cos</span>(<span class="number">2</span>*<span class="built_in">pi</span>*x(L2)); <span class="comment">%注意点乘</span></span><br><span class="line">y(L3) = <span class="built_in">exp</span>(-x(L3)+<span class="number">1</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%plot</span></span><br><span class="line">x=<span class="number">-2</span>:<span class="number">1</span>/<span class="number">100</span>:<span class="number">2</span>;</span><br><span class="line">y1=exm1(x);</span><br><span class="line">y2=exm2(x);</span><br><span class="line">clf</span><br><span class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>),<span class="built_in">plot</span>(x,y1),</span><br><span class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>),<span class="built_in">plot</span>(x,y2)</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-4-矩阵及运算"><a href="#3-4-矩阵及运算" class="headerlink" title="3.4 矩阵及运算"></a>3.4 矩阵及运算</h1><p>在不涉及运算性质时，矩阵与二维数组相同。</p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110311500256.png" alt="Untitled"></p>
+<h2 id="3-4-2-矩阵运算符和矩阵函数"><a href="#3-4-2-矩阵运算符和矩阵函数" class="headerlink" title="3.4.2 矩阵运算符和矩阵函数"></a>3.4.2 矩阵运算符和矩阵函数</h2><p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110311500492.png" alt="Untitled"></p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110311500372.png" alt="Untitled"></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Am=<span class="built_in">magic</span>(<span class="number">3</span>)</span><br><span class="line">Aa=<span class="built_in">reshape</span>(<span class="number">1</span>:<span class="number">12</span>,<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line">B=<span class="built_in">repmat</span>(<span class="number">1</span>:<span class="number">4</span>,<span class="number">3</span>,<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">AmmB=Am*B</span><br><span class="line">AamB=Aa.*B</span><br><span class="line">AmLdB=Am\B</span><br><span class="line">AaadB=Aa.\B</span><br><span class="line">Amm2=Am^<span class="number">2</span></span><br><span class="line">Ama2=Am.^<span class="number">2</span></span><br><span class="line">Am2m=<span class="number">2</span>^Am <span class="comment">%Am必须为方阵</span></span><br><span class="line">Am2a=<span class="number">2.</span>^Am</span><br><span class="line"></span><br><span class="line">rng(<span class="number">0</span>) <span class="comment">%设置随机数种子，种子一样，随机数一样。</span></span><br><span class="line">D=<span class="built_in">randn</span>(<span class="number">3</span>,<span class="number">3</span>)</span><br><span class="line">AmLdD=Am\D</span><br><span class="line">DRdAm=D/Am</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-4-3-矩阵化编程"><a href="#3-4-3-矩阵化编程" class="headerlink" title="3.4.3 矩阵化编程"></a>3.4.3 矩阵化编程</h2><p>其他语言处理一系列数据通常使用循环，matlab用矩阵思想编程。</p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110311500838.png" alt="Untitled"></p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110311501801.png" alt="Untitled"></p>
+<p><img src="https://gitee.com/quet_weilan/picgo/raw/master/img/202110311501571.png" alt="Untitled"></p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+                     <p class="copyright-item">
+
+                         <span>I feel honored if I helped you! If your problem is not solved, please move to <strong>GOOGLE</strong> !</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E7%AC%94%E8%AE%B0/"># 笔记</a>
+                    
+                        <a href="/tags/Matlab/"># Matlab</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2021/10/23/M1%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%87%86%E5%A4%87%E5%8F%8A%E5%85%A5%E9%97%A8/">M1：基础准备及入门</a>
+            
+            
+            <a class="next" rel="next" href="/2021/10/06/%E5%85%B3%E4%BA%8E%E9%9A%8F%E7%AC%94%E8%BF%99%E4%BB%B6%E4%BA%8B/">关于随笔这件事</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Quet Weilan | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
